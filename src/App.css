@@ -1,9 +1,9 @@
-:root{
-  --mainBlue:#2a2a72;
-  --lightBlue:#009ffd;
-  --mainWhite:#f3f3f3;
-  --mainDark:#232528;
-  --mainYellow:#ffa400;
+:root {
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainWhite: #f3f3f3;
+  --mainDark: #232528;
+  --mainYellow: #ffa400;
 }
 
 * {
@@ -19,5 +19,29 @@
     url("./assets/images/background1.jpg") center/cover fixed no-repeat;
 
   /* background: var(--lightBlue);    */
-    
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  padding: 20px;
+  margin: 10%;
+  width: auto;
+  background-color: rgba(42, 42, 114, 0.6) !important;
+}
+.topic {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  color: var(--lightBlue);
+  margin: 1%;
+}
+.input {
+  width: 300px;
+}
+.label {
+  text-align: center;
+  color: var(--lightBlue);
 }
