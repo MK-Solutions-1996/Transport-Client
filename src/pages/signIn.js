@@ -1,18 +1,16 @@
 import React from "react";
 import TopNavbar from "../components/TopNavbar";
-import { ButtonContainer } from "../components/Customs";
+import { ButtonContainer, LabelContainer } from "../components/Customs";
 
 function signIn() {
   return (
     <div className="background">
       <TopNavbar nextPage="/signup" pageName="Sign Up" />
-
-      {/* Signin form should be implemented in here */}
       <div className="center">
         <div className="card">
           <form action="/action_page.php">
-            <div className="topic">
-              <label>Sign In</label>
+            <div className="center">
+              <LabelContainer>Sign In</LabelContainer>
             </div>
             <div className="form-group input">
               <input
@@ -20,7 +18,7 @@ function signIn() {
                 class="form-control"
                 id="usr"
                 name="username"
-                placeholder="Enter Email Address"
+                placeholder="Email Address"
               />
             </div>
             <div className="form-group input">
@@ -29,25 +27,16 @@ function signIn() {
                 class="form-control"
                 id="pwd"
                 name="password"
-                placeholder="Enter Password"
+                placeholder="Password"
               />
             </div>
-            {/* <div className="btnS">
-            <button
-              type="submit"
-              class="btn btn-primary button-background"
-              onClick={() => history.push("/addDriver")}
-            >
-              SIGN IN
-                </button>
-          </div> */}
             <div className="center">
               <ButtonContainer>Sign In</ButtonContainer>
             </div>
-            <div className="label">
-              Don't have an account? <a href="#">Sign Up</a>
+            <div className="text">
+              Don't have an account? <a href="/signup">Sign Up here</a>
             </div>
-            <div className="label">
+            <div className="text">
               <a href="#">Forgot your password?</a>
             </div>
           </form>

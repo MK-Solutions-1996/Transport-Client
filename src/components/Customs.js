@@ -20,3 +20,10 @@ export const ButtonContainer = styled.button`
     outline: none;
   }
 `;
+export const LabelContainer = styled.label`
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  color: var(--lightBlue);
+  margin: 3%;
+`;

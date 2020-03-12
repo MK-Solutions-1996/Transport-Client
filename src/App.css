@@ -20,28 +20,26 @@
 
   /* background: var(--lightBlue);    */
 }
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .card {
   padding: 20px;
-  margin: 10%;
+  margin: 5%;
   width: auto;
+  border-radius: 0.5rem;
   background-color: rgba(42, 42, 114, 0.6) !important;
 }
-.topic {
-  text-align: center;
-  font-size: 30px;
-  font-weight: bolder;
-  color: var(--lightBlue);
-  margin: 1%;
-}
+
 .input {
   width: 300px;
 }
-.label {
+
+.text {
   text-align: center;
   color: var(--lightBlue);
 }
