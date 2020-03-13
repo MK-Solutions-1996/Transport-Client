@@ -1,8 +1,10 @@
 import React from "react";
 import TopNavbar from "../components/TopNavbar";
 import SideMenuBar from "../components/SideMenuBar";
+import { Link } from "react-router-dom";
+import { ButtonContainer } from "../components/Customs";
 
-function mainPage() {
+function drivers() {
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign Out" />
@@ -14,8 +16,15 @@ function mainPage() {
           <SideMenuBar />
         </div>
       </div>
+      <div className="center">
+        <ButtonContainer>
+          <Link to="addDrivers" className="ml-auto center">
+            Add Drivers
+          </Link>
+        </ButtonContainer>
+      </div>
     </div>
   );
 }
 
-export default mainPage;
+export default drivers;

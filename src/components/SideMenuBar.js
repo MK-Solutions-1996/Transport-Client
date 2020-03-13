@@ -10,7 +10,7 @@ function SideMenuBar() {
       icon: "pi pi-fw pi-user",
       items: null,
       command: () => {
-        loadNavigator("/");
+        loadNavigator("/viewDrivers");
       }
     },
     {
