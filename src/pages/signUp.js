@@ -3,7 +3,8 @@ import TopNavbar from "../components/TopNavbar";
 import {
   ButtonContainer,
   LabelContainer,
-  InputContainer
+  InputContainer,
+  SelectContainer
 } from "../components/Customs";
 
 function signUp() {
@@ -18,19 +19,19 @@ function signUp() {
               <LabelContainer>Sign Up</LabelContainer>
             </div>
             <div className="direction">
-              <div class="form-group center">
+              <div className="form-group center">
                 <InputContainer
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="empno"
                   name="empnumber"
                   placeholder="Employee Number"
                 ></InputContainer>
               </div>
-              <div class="form-group center">
+              <div className="form-group center">
                 <InputContainer
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="fname"
                   name="firstname"
                   placeholder="First Name"
@@ -38,46 +39,38 @@ function signUp() {
               </div>
             </div>
             <div className="direction">
-              <div class="form-group center">
+              <div className="form-group center">
                 <InputContainer
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="email"
                   name="emailaddress"
                   placeholder="Email Address"
                 ></InputContainer>
               </div>
-              <div class="form-group center">
-                <div class="dropdown">
-                  <button
-                    type="button"
-                    class="btn btn-light dropdown-toggle dropdown"
-                    data-toggle="dropdown"
-                  >
-                    Employee Type
-                  </button>
-                  <div class="dropdown-menu">
-                    <p class="dropdown-item">Transport Manager</p>
-                    <p class="dropdown-item">Line Manager</p>
-                    <p class="dropdown-item">HR Manager</p>
-                  </div>
-                </div>
+              <div className="form-group center">
+                <SelectContainer className="browser-default custom-select dropdown">
+                  <option selected>Employee Type</option>
+                  <option value="1">Transport Manager</option>
+                  <option value="2">Line Manager</option>
+                  <option value="3">HR Manager</option>
+                </SelectContainer>
               </div>
             </div>
             <div className="direction">
-              <div class="form-group center">
+              <div className="form-group center">
                 <InputContainer
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="pwd"
                   name="password"
                   placeholder="Password"
                 ></InputContainer>
               </div>
-              <div class="form-group center">
+              <div className="form-group center">
                 <InputContainer
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="cpwd"
                   name="confirmpassword"
                   placeholder="Confirm Password"

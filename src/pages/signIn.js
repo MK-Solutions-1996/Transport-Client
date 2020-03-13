@@ -19,6 +19,7 @@ function signIn() {
             <div className="form-group center">
               <InputContainer
                 type="text"
+                className="form-control"
                 id="usr"
                 name="username"
                 placeholder="Email Address"
@@ -27,7 +28,7 @@ function signIn() {
             <div className="form-group center">
               <InputContainer
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="pwd"
                 name="password"
                 placeholder="Password"

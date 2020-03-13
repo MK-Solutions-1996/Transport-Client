@@ -22,7 +22,7 @@ export const ButtonContainer = styled.button`
 `;
 export const LabelContainer = styled.label`
   text-align: center;
-  font-size: 35px;
+  font-size: 2.1rem;
   font-weight: bolder;
   color: var(--lightBlue);
   margin: 3%;
@@ -31,6 +31,15 @@ export const LabelContainer = styled.label`
 export const InputContainer = styled.input`
   width: 300px;
   margin: 1%;
+  padding: 2%;
   height: 35px;
   border-radius: 0.3rem;
+`;
+
+export const SelectContainer = styled.select`
+  padding: 2%;
+  margin: 2%;
+  height: 35px;
+  width: 200px;
+  font-size: 1rem;
 `;
