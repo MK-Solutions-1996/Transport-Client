@@ -22,8 +22,15 @@ export const ButtonContainer = styled.button`
 `;
 export const LabelContainer = styled.label`
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bolder;
   color: var(--lightBlue);
   margin: 3%;
+`;
+
+export const InputContainer = styled.input`
+  width: 300px;
+  margin: 1%;
+  height: 35px;
+  border-radius: 0.3rem;
 `;

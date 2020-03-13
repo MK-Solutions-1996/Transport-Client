@@ -1,6 +1,10 @@
 import React from "react";
 import TopNavbar from "../components/TopNavbar";
-import { ButtonContainer, LabelContainer } from "../components/Customs";
+import {
+  ButtonContainer,
+  LabelContainer,
+  InputContainer
+} from "../components/Customs";
 
 function signUp() {
   return (
@@ -13,41 +17,72 @@ function signUp() {
             <div className="center">
               <LabelContainer>Sign Up</LabelContainer>
             </div>
-            <div class="form-group input">
-              <input
-                type="text"
-                class="form-control"
-                id="empno"
-                name="empnumber"
-                placeholder="Employee Number"
-              />
+            <div className="direction">
+              <div class="form-group center">
+                <InputContainer
+                  type="text"
+                  class="form-control"
+                  id="empno"
+                  name="empnumber"
+                  placeholder="Employee Number"
+                ></InputContainer>
+              </div>
+              <div class="form-group center">
+                <InputContainer
+                  type="text"
+                  class="form-control"
+                  id="fname"
+                  name="firstname"
+                  placeholder="First Name"
+                ></InputContainer>
+              </div>
             </div>
-            <div class="form-group input">
-              <input
-                type="text"
-                class="form-control"
-                id="email"
-                name="emailaddress"
-                placeholder="Email Address"
-              />
+            <div className="direction">
+              <div class="form-group center">
+                <InputContainer
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="emailaddress"
+                  placeholder="Email Address"
+                ></InputContainer>
+              </div>
+              <div class="form-group center">
+                <div class="dropdown">
+                  <button
+                    type="button"
+                    class="btn btn-light dropdown-toggle dropdown"
+                    data-toggle="dropdown"
+                  >
+                    Employee Type
+                  </button>
+                  <div class="dropdown-menu">
+                    <p class="dropdown-item">Transport Manager</p>
+                    <p class="dropdown-item">Line Manager</p>
+                    <p class="dropdown-item">HR Manager</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-group input">
-              <input
-                type="password"
-                class="form-control"
-                id="pwd"
-                name="password"
-                placeholder="Password"
-              />
-            </div>
-            <div class="form-group input">
-              <input
-                type="password"
-                class="form-control"
-                id="cpwd"
-                name="confirmpassword"
-                placeholder="Confirm Password"
-              />
+            <div className="direction">
+              <div class="form-group center">
+                <InputContainer
+                  type="password"
+                  class="form-control"
+                  id="pwd"
+                  name="password"
+                  placeholder="Password"
+                ></InputContainer>
+              </div>
+              <div class="form-group center">
+                <InputContainer
+                  type="password"
+                  class="form-control"
+                  id="cpwd"
+                  name="confirmpassword"
+                  placeholder="Confirm Password"
+                ></InputContainer>
+              </div>
             </div>
             <div className="center">
               <ButtonContainer>Sign Up</ButtonContainer>

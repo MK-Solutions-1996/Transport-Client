@@ -1,6 +1,10 @@
 import React from "react";
 import TopNavbar from "../components/TopNavbar";
-import { ButtonContainer, LabelContainer } from "../components/Customs";
+import {
+  ButtonContainer,
+  LabelContainer,
+  InputContainer
+} from "../components/Customs";
 
 function signIn() {
   return (
@@ -12,23 +16,22 @@ function signIn() {
             <div className="center">
               <LabelContainer>Sign In</LabelContainer>
             </div>
-            <div className="form-group input">
-              <input
+            <div className="form-group center">
+              <InputContainer
                 type="text"
-                class="form-control"
                 id="usr"
                 name="username"
                 placeholder="Email Address"
-              />
+              ></InputContainer>
             </div>
-            <div className="form-group input">
-              <input
+            <div className="form-group center">
+              <InputContainer
                 type="password"
                 class="form-control"
                 id="pwd"
                 name="password"
                 placeholder="Password"
-              />
+              ></InputContainer>
             </div>
             <div className="center">
               <ButtonContainer>Sign In</ButtonContainer>
