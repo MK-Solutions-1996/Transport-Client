@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import TopNavbar from "../components/TopNavbar";
 import {
   ButtonContainer,
@@ -35,13 +36,18 @@ function signIn() {
               ></InputContainer>
             </div>
             <div className="center">
-              <ButtonContainer>Sign In</ButtonContainer>
+              <ButtonContainer>
+                <Link to="main" className="ml-auto center">
+                  Sign In
+                </Link>
+              </ButtonContainer>
             </div>
+
             <div className="text">
               Don't have an account? <a href="/signup">Sign Up here</a>
             </div>
             <div className="text">
-              <a href="#">Forgot your password?</a>
+              <a href="/">Forgot your password?</a>
             </div>
           </form>
         </div>
