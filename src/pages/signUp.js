@@ -2,7 +2,7 @@ import React from "react";
 import TopNavbar from "../components/TopNavbar";
 import {
   ButtonContainer,
-  LabelContainer,
+  TopicContainer,
   InputContainer,
   SelectContainer
 } from "../components/Customs";
@@ -16,7 +16,7 @@ function signUp() {
         <div class="card">
           <form action="/action_page.php">
             <div className="center">
-              <LabelContainer>Sign Up</LabelContainer>
+              <TopicContainer>Sign Up</TopicContainer>
             </div>
             <div className="direction">
               <div className="form-group center">

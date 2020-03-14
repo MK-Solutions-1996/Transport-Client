@@ -1,34 +1,31 @@
 import React, { useState } from "react";
 import TopNavbar from "../components/TopNavbar";
 import SideMenuBar from "../components/SideMenuBar";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import {
   ButtonContainer,
   InputContainer,
+  TopicContainer,
+  SelectContainer,
   LabelContainer,
-  SelectContainer
+  DateContainer
 } from "../components/Customs";
 import { Spinner } from "primereact/spinner";
 
-function addDrivers() {
-  //   const initialCapacity = 0;
-  //   const [capacity, setCapacity] = useState(initialCapacity);
+function AddDrivers() {
+  const initialCapacity = 0;
+  const [capacity, setCapacity] = useState(initialCapacity);
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign Out" />
-      <div
-        className="col-md-2 side-menu"
-        style={{ position: "relative", padding: 0 }}
-      >
-        <div style={{ position: "fixed", padding: 0, marginTop: 0 }}>
-          <SideMenuBar />
-        </div>
-      </div>
+
+      <SideMenuBar />
+
       <div className="center">
         <div className="card">
           <form action="/action_page.php">
             <div className="center">
-              <LabelContainer>Add Drivers</LabelContainer>
+              <TopicContainer>Add Drivers</TopicContainer>
             </div>
             <div className="direction">
               <div className="form-group center">
@@ -60,17 +57,34 @@ function addDrivers() {
                   placeholder="Driver NIC"
                 ></InputContainer>
               </div>
-            </div>
-            <div className="direction">
               <div className="form-group center">
                 <InputContainer
                   type="text"
                   className="form-control"
+                  id="lno"
+                  name="licensenumber"
+                  placeholder="License Number"
+                ></InputContainer>
+              </div>
+            </div>
+            <div
+              className="direction"
+              style={{ justifyContent: "space-between" }}
+            >
+              <div className="form-group center">
+                <LabelContainer>License Expire Date :</LabelContainer>
+              </div>
+              <div className="form-group center">
+                <DateContainer
+                  type="date"
+                  className="form-control"
                   id="lexpdate"
                   name="licenseexpdate"
                   placeholder="License Expire Date"
-                ></InputContainer>
+                ></DateContainer>
               </div>
+            </div>
+            <div className="direction">
               <div className="form-group center">
                 <InputContainer
                   type="text"
@@ -80,8 +94,6 @@ function addDrivers() {
                   placeholder="Owner Name"
                 ></InputContainer>
               </div>
-            </div>
-            <div className="direction">
               <div className="form-group center">
                 <InputContainer
                   type="number"
@@ -91,6 +103,8 @@ function addDrivers() {
                   placeholder="Owner Mobile Number"
                 ></InputContainer>
               </div>
+            </div>
+            <div className="direction center">
               <div className="form-group center">
                 <InputContainer
                   type="text"
@@ -101,7 +115,10 @@ function addDrivers() {
                 ></InputContainer>
               </div>
             </div>
-            <div className="direction">
+            <div
+              className="direction"
+              style={{ justifyContent: "space-between" }}
+            >
               <div className="form-group center">
                 <SelectContainer className="browser-default custom-select dropdown">
                   <option selected>Vehicle Category</option>
@@ -109,16 +126,13 @@ function addDrivers() {
                   <option value="2">Bus</option>
                 </SelectContainer>
               </div>
-              <div>
-                {/* <Spinner
+              <div className="spinner">
+                <Spinner
                   value={capacity}
                   size={9}
                   onChange={e => setCapacity(e.value)}
-                /> */}
+                />
               </div>
-            </div>
-
-            <div className="direction">
               <div className="form-group center">
                 <SelectContainer className="browser-default custom-select dropdown">
                   <option selected>Vehicle Type</option>
@@ -128,7 +142,6 @@ function addDrivers() {
                 </SelectContainer>
               </div>
             </div>
-
             <div className="center">
               <ButtonContainer>Add Drivers</ButtonContainer>
             </div>
@@ -139,4 +152,4 @@ function addDrivers() {
   );
 }
 
-export default addDrivers;
+export default AddDrivers;

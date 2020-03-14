@@ -20,7 +20,7 @@ export const ButtonContainer = styled.button`
     outline: none;
   }
 `;
-export const LabelContainer = styled.label`
+export const TopicContainer = styled.label`
   text-align: center;
   font-size: 2.1rem;
   font-weight: bolder;
@@ -28,8 +28,25 @@ export const LabelContainer = styled.label`
   margin: 3%;
 `;
 
+export const LabelContainer = styled.label`
+  font-size: 1.2rem;
+  color: var(--lightBlue);
+  margin: 1%;
+  padding: 2%;
+  width: 200px;
+`;
+
 export const InputContainer = styled.input`
   width: 300px;
+  margin: 1%;
+  padding: 2%;
+  height: 35px;
+  border-radius: 0.3rem;
+`;
+
+export const DateContainer = styled.input`
+  text-align: center;
+  width: 400px;
   margin: 1%;
   padding: 2%;
   height: 35px;

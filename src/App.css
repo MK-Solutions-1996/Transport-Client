@@ -45,10 +45,16 @@
 }
 
 .dropdown {
-  margin: 2%;
+  margin: 0.5rem;
   height: 35px;
 }
 .link {
   height: auto;
   width: auto;
+}
+
+.spinner {
+  height: 35px;
+  margin: 0.3rem 0.2rem 0.2rem 0.2rem;
+  width: 100px;
 }

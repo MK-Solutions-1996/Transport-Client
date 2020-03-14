@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import TopNavbar from "../components/TopNavbar";
 import {
   ButtonContainer,
-  LabelContainer,
+  TopicContainer,
   InputContainer
 } from "../components/Customs";
 
@@ -15,7 +15,7 @@ function signIn() {
         <div className="card">
           <form action="/action_page.php">
             <div className="center">
-              <LabelContainer>Sign In</LabelContainer>
+              <TopicContainer>Sign In</TopicContainer>
             </div>
             <div className="form-group center">
               <InputContainer

@@ -60,17 +60,21 @@ function SideMenuBar() {
   return (
     <div className="side-menu">
       {navigateToPage(path)}
-      <SlideMenu
-        id="slidemenu"
-        style={{
-          backgroundColor: "rgb(0,0,0,0.7)",
-          borderColor: "rgb(0,0,0,0.6)",
-          padding: "0.2rem 0.5rem",
-          cursor: "pointer"
-        }}
-        model={item}
-        viewportHeight={window.innerHeight}
-      ></SlideMenu>
+      <div className="col-md-2 side-menu" style={{ padding: 0 }}>
+        <div style={{ position: "fixed", padding: 0, marginTop: 0 }}>
+          <SlideMenu
+            id="slidemenu"
+            style={{
+              backgroundColor: "rgb(0,0,0,0.7)",
+              borderColor: "rgb(0,0,0,0.6)",
+              padding: "0.2rem 0.5rem",
+              cursor: "pointer"
+            }}
+            model={item}
+            viewportHeight={window.innerHeight}
+          ></SlideMenu>
+        </div>
+      </div>
     </div>
   );
 }
