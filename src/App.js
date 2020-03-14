@@ -9,6 +9,7 @@ import MainPage from "./pages/mainPage";
 import ViewDrivers from "./pages/viewDrivers";
 import AddDrivers from "./pages/addDrivers";
 import Zone from "./pages/zone";
+import City from "./pages/city";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/viewDrivers" component={ViewDrivers}></Route>
         <Route exact path="/addDrivers" component={AddDrivers}></Route>
         <Route exact path="/zone" component={Zone}></Route>
+        <Route exact path="/city" component={City}></Route>
         <Route component={DefaultPage}></Route>
       </Switch>
     </>

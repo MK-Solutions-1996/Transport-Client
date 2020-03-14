@@ -4,7 +4,8 @@ import TopNavbar from "../components/TopNavbar";
 import {
   ButtonContainer,
   TopicContainer,
-  InputContainer
+  InputContainer,
+  LongLabelContainer
 } from "../components/Customs";
 
 function signIn() {
@@ -42,12 +43,15 @@ function signIn() {
                 </Link>
               </ButtonContainer>
             </div>
-
-            <div className="text">
-              Don't have an account? <a href="/signup">Sign Up here</a>
+            <div className="center">
+              <LongLabelContainer>
+                Don't have an account? <a href="/signup">Sign Up here</a>
+              </LongLabelContainer>
             </div>
-            <div className="text">
-              <a href="/">Forgot your password?</a>
+            <div className="center">
+              <LongLabelContainer>
+                <a href="/">Forgot your password?</a>
+              </LongLabelContainer>
             </div>
           </form>
         </div>

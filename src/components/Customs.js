@@ -29,13 +29,20 @@ export const TopicContainer = styled.label`
 `;
 
 export const LabelContainer = styled.label`
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--lightBlue);
   margin: 1%;
-  padding: 2%;
+  padding: 1%;
+  height: auto;
   width: 200px;
 `;
 
+export const LongLabelContainer = styled.label`
+  font-size: 1rem;
+  color: var(--lightBlue);
+  margin: 1%;
+  padding: 1%;
+`;
 export const InputContainer = styled.input`
   width: 300px;
   margin: 1%;
@@ -57,6 +64,7 @@ export const SelectContainer = styled.select`
   padding: 2%;
   margin: 2%;
   height: 35px;
-  width: 200px;
+  width: 310px;
   font-size: 1rem;
+  border-radius: 0.4rem;
 `;

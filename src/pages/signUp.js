@@ -4,7 +4,8 @@ import {
   ButtonContainer,
   TopicContainer,
   InputContainer,
-  SelectContainer
+  SelectContainer,
+  LongLabelContainer
 } from "../components/Customs";
 
 function signUp() {
@@ -80,8 +81,10 @@ function signUp() {
             <div className="center">
               <ButtonContainer>Sign Up</ButtonContainer>
             </div>
-            <div className="text">
-              Already have an account? <a href="/">Sign In here</a>
+            <div className="center">
+              <LongLabelContainer>
+                Already have an account? <a href="/">Sign In here</a>
+              </LongLabelContainer>
             </div>
           </form>
         </div>

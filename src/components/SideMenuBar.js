@@ -26,7 +26,7 @@ function SideMenuBar() {
       icon: "pi pi-map-marker",
       items: null,
       command: () => {
-        loadNavigator("/");
+        loadNavigator("/city");
       }
     },
     {
