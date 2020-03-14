@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TopNavbar from "../components/TopNavbar";
 import SideMenuBar from "../components/SideMenuBar";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   ButtonContainer,
   InputContainer,
@@ -18,7 +18,6 @@ function AddDrivers() {
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign Out" />
-
       <SideMenuBar />
 
       <div className="center">

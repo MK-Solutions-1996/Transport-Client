@@ -18,7 +18,7 @@ function SideMenuBar() {
       icon: "pi pi-fw pi-plus",
       items: null,
       command: () => {
-        loadNavigator("/");
+        loadNavigator("/zone");
       }
     },
     {
