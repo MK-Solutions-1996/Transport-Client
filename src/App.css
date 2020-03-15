@@ -28,17 +28,13 @@
 }
 
 .card {
-  padding: 20px;
-  margin: 5%;
+  padding: 2vh 2vw;
+  margin: 10vh 20vw;
   width: auto;
   border-radius: 0.5rem;
   background-color: rgba(42, 42, 114, 0.6) !important;
 }
 
-.text {
-  text-align: center;
-  color: var(--lightBlue);
-}
 .direction {
   display: flex;
   flex-direction: row;

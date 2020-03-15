@@ -7,25 +7,8 @@ import {
   SelectContainer,
   LongLabelContainer
 } from "../components/Customs";
-import { useSelector, useDispatch } from 'react-redux';
-//import { useSelector } from 'react-redux';
-import { signup_user_action } from '../redux';
 
 function SignUp() {
-
-  // const signup_state = useSelector(state => state.signup);
-  // const { loading, result, error } = signup_state;
-  // const dispatch = useDispatch();
-
-  const [empNo, setEmpNo] = useState('');
-  const [fname, setFname] = useState('');
-  const [email, setEmail] = useState('');
-  const [empType, setEmpType] = useState('');
-  const [pw, setPw] = useState('');
-  const [cpw, setCpw] = useState('');
-
-
-
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign In" />
@@ -44,7 +27,8 @@ function SignUp() {
                   id="empno"
                   name="empnumber"
                   placeholder="Employee Number"
-                  onChange={(e) => setEmpNo(e.target.value)}
+
+                //onChange={(e) => setEmpNo(e.target.value)}
                 ></InputContainer>
               </div>
               <div className="form-group center">
@@ -54,7 +38,6 @@ function SignUp() {
                   id="fname"
                   name="firstname"
                   placeholder="First Name"
-                  onChange={(e) => setFname(e.target.value)}
                 ></InputContainer>
               </div>
             </div>
@@ -66,7 +49,6 @@ function SignUp() {
                   id="email"
                   name="emailaddress"
                   placeholder="Email Address"
-                  onChange={(e) => setEmail(e.target.value)}
                 ></InputContainer>
               </div>
               <div className="form-group center">
