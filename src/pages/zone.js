@@ -7,7 +7,7 @@ import {
   TopicContainer
 } from "../components/Customs";
 
-function zone() {
+function Zone() {
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign Out" />
@@ -39,4 +39,4 @@ function zone() {
   );
 }
 
-export default zone;
+export default Zone;

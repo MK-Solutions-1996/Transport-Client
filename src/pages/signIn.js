@@ -8,7 +8,7 @@ import {
   LongLabelContainer
 } from "../components/Customs";
 
-function signIn() {
+function SignIn() {
   return (
     <div className="background">
       <TopNavbar nextPage="/signup" pageName="Sign Up" />
@@ -60,4 +60,4 @@ function signIn() {
   );
 }
 
-export default signIn;
+export default SignIn;

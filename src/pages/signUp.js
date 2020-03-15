@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import TopNavbar from "../components/TopNavbar";
 import {
   ButtonContainer,
   TopicContainer,
   InputContainer,
-  SelectContainer,
   LongLabelContainer
 } from "../components/Customs";
+import { Dropdown } from "primereact/dropdown";
 
-function signUp() {
+function SignUp() {
+  const [type, setType] = useState([
+    { label: "Line Manager", value: "Line Manager" },
+    { label: "Transport Manager", value: "Transport Manager" }
+  ]);
+  const [selectedType] = useState();
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign In" />
@@ -50,12 +55,26 @@ function signUp() {
                 ></InputContainer>
               </div>
               <div className="form-group center">
-                <SelectContainer className="browser-default custom-select dropdown">
+                <Dropdown
+                  value={selectedType}
+                  options={type}
+                  ariaLabel="Test"
+                  onChange={e => setType(e.value)}
+                  placeholder="Choose Employee Type"
+                  optionLabel="label"
+                  style={{
+                    width: "20vw",
+                    height: "2rem",
+                    borderRadius: "0.4rem",
+                    margin: "0.3rem"
+                  }}
+                />
+                {/* <SelectContainer className="browser-default custom-select dropdown">
                   <option selected>Employee Type</option>
                   <option value="1">Transport Manager</option>
                   <option value="2">Line Manager</option>
                   <option value="3">HR Manager</option>
-                </SelectContainer>
+                </SelectContainer> */}
               </div>
             </div>
             <div className="direction">
@@ -93,4 +112,4 @@ function signUp() {
   );
 }
 
-export default signUp;
+export default SignUp;

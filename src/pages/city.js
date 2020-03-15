@@ -59,7 +59,8 @@ function City() {
                 style={{
                   width: "20vw",
                   height: "2rem",
-                  borderRadius: "0.4rem"
+                  borderRadius: "0.4rem",
+                  margin: "0.3rem"
                 }}
               />
             </div>
@@ -71,7 +72,8 @@ function City() {
                 style={{
                   width: "20vw",
                   height: "2rem",
-                  borderRadius: "0.4rem"
+                  borderRadius: "0.4rem",
+                  margin: "0.3rem"
                 }}
                 filter={true}
                 filterPlaceholder="Search"
