@@ -11,8 +11,10 @@ import { Dropdown } from "primereact/dropdown";
 function SignUp() {
   const [type, setType] = useState([
     { label: "Line Manager", value: "Line Manager" },
-    { label: "Transport Manager", value: "Transport Manager" }
+    { label: "Transport Manager", value: "Transport Manager" },
+    { label: "HR Manager", value: "HR Manager" }
   ]);
+
   const [selectedType] = useState();
   return (
     <div className="background">
