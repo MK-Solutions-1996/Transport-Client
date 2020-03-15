@@ -4,11 +4,31 @@ import {
   ButtonContainer,
   TopicContainer,
   InputContainer,
-  SelectContainer,
   LongLabelContainer
 } from "../components/Customs";
+import { Dropdown } from "primereact/dropdown";
 
 function SignUp() {
+
+  //Meka hadapiya
+
+  const [type, setType] = useState([
+    {
+      label: "Line Manager",
+      value: "Line Manager"
+    },
+    {
+      label: "Transport Manager",
+      value: "Transport Manager"
+    }
+  ]);
+
+  const [selectedType] = useState();
+
+  //console.log('type:', type);
+  // console.log('selectedType:', selectedType);
+
+
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign In" />
@@ -27,8 +47,6 @@ function SignUp() {
                   id="empno"
                   name="empnumber"
                   placeholder="Employee Number"
-
-                //onChange={(e) => setEmpNo(e.target.value)}
                 ></InputContainer>
               </div>
               <div className="form-group center">
@@ -52,12 +70,26 @@ function SignUp() {
                 ></InputContainer>
               </div>
               <div className="form-group center">
-                <SelectContainer className="browser-default custom-select dropdown">
+                <Dropdown
+                  value={selectedType}
+                  options={type}
+                  ariaLabel="Test"
+                  onChange={e => setType(e.value)}
+                  placeholder="Choose Employee Type"
+                  optionLabel="label"
+                  style={{
+                    width: "20vw",
+                    height: "2rem",
+                    borderRadius: "0.4rem",
+                    margin: "0.3rem"
+                  }}
+                />
+                {/* <SelectContainer className="browser-default custom-select dropdown">
                   <option selected>Employee Type</option>
                   <option value="1">Transport Manager</option>
                   <option value="2">Line Manager</option>
                   <option value="3">HR Manager</option>
-                </SelectContainer>
+                </SelectContainer> */}
               </div>
             </div>
             <div className="direction">
