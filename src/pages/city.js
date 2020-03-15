@@ -4,10 +4,10 @@ import SideMenuBar from "../components/SideMenuBar";
 import {
   ButtonContainer,
   InputContainer,
-  TopicContainer,
-  SelectContainer
+  TopicContainer
 } from "../components/Customs";
 import { MultiSelect } from "primereact/multiselect";
+import { Dropdown } from "primereact/dropdown";
 
 function City() {
   //sample zone array
@@ -17,6 +17,7 @@ function City() {
     { label: "C", value: "C" }
   ]);
   const [selectedSubZones, setSubZones] = useState([]);
+  const [selectedMainZone, setMainZone] = useState();
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign Out" />
@@ -48,15 +49,19 @@ function City() {
               ></InputContainer>
             </div>
             <div className="form-group center">
-              <SelectContainer className="browser-default custom-select">
-                <option value="" disabled selected>
-                  Choose Main Zone
-                </option>
-                {/* sample zones  */}
-                <option value="1">B</option>
-                <option value="2">D1</option>
-                <option value="3">D</option>
-              </SelectContainer>
+              <Dropdown
+                value={selectedMainZone}
+                options={zone}
+                ariaLabel="Test"
+                onChange={e => setMainZone(e.value)}
+                placeholder="Choose Main Zone"
+                optionLabel="label"
+                style={{
+                  width: "20vw",
+                  height: "2rem",
+                  borderRadius: "0.4rem"
+                }}
+              />
             </div>
             <div className="form-group center">
               <MultiSelect
@@ -64,8 +69,8 @@ function City() {
                 options={zone}
                 onChange={e => setSubZones(e.value)}
                 style={{
-                  width: "300px",
-                  height: "35px",
+                  width: "20vw",
+                  height: "2rem",
                   borderRadius: "0.4rem"
                 }}
                 filter={true}

@@ -25,46 +25,47 @@ export const TopicContainer = styled.label`
   font-size: 2.1rem;
   font-weight: bolder;
   color: var(--lightBlue);
-  margin: 3%;
+  margin: 0.5rem;
 `;
 
 export const LabelContainer = styled.label`
   font-size: 1.1rem;
   color: var(--lightBlue);
-  margin: 1%;
-  padding: 1%;
+  padding: 0.2rem;
   height: auto;
-  width: 200px;
+  width: 20vw;
 `;
 
 export const LongLabelContainer = styled.label`
   font-size: 1rem;
   color: var(--lightBlue);
-  margin: 1%;
-  padding: 1%;
+  margin: 0.1rem;
+  padding: 0.1rem;
+  height: auto;
+  width: auto;
 `;
 export const InputContainer = styled.input`
-  width: 300px;
-  margin: 1%;
-  padding: 2%;
-  height: 35px;
+  width: 20vw;
+  margin: 0.3rem;
+  padding: 0.2rem;
+  height: 2rem;
   border-radius: 0.3rem;
 `;
 
 export const DateContainer = styled.input`
   text-align: center;
-  width: 400px;
-  margin: 1%;
-  padding: 2%;
-  height: 35px;
+  width: 20vw;
+  margin: 0.3rem;
+  padding: 0.2rem;
+  height: 2rem;
   border-radius: 0.3rem;
 `;
 
 export const SelectContainer = styled.select`
-  padding: 2%;
-  margin: 2%;
-  height: 35px;
-  width: 310px;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  height: 2rem;
+  width: 20vw;
   font-size: 1rem;
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
 `;
