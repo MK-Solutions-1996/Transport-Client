@@ -14,7 +14,6 @@ function SignUp() {
     { label: "Transport Manager", value: "Transport Manager" },
     { label: "HR Manager", value: "HR Manager" }
   ]);
-
   const [selectedType] = useState();
   return (
     <div className="background">
