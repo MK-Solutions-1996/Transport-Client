@@ -9,13 +9,26 @@ import {
 import { Dropdown } from "primereact/dropdown";
 
 function SignUp() {
-  const [type, setType] = useState([
-    { label: "Line Manager", value: "Line Manager" },
-    { label: "Transport Manager", value: "Transport Manager" },
-    { label: "HR Manager", value: "HR Manager" }
+  const [types] = useState([
+    {
+      label: "Line Manager",
+      value: "Line Manager"
+    },
+    {
+      label: "Department Manager",
+      value: "Department Manager"
+    },
+    {
+      label: "HR Manager",
+      value: "HR Manager"
+    }
   ]);
 
-  const [selectedType] = useState();
+  const [selectedType, setType] = useState("");
+
+  //console.log('type:', type);
+  console.log("selectedType:", selectedType);
+
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign In" />
@@ -59,7 +72,7 @@ function SignUp() {
               <div className="form-group center">
                 <Dropdown
                   value={selectedType}
-                  options={type}
+                  options={types}
                   ariaLabel="Test"
                   onChange={e => setType(e.value)}
                   placeholder="Choose Employee Type"
@@ -71,12 +84,6 @@ function SignUp() {
                     margin: "0.3rem"
                   }}
                 />
-                {/* <SelectContainer className="browser-default custom-select dropdown">
-                  <option selected>Employee Type</option>
-                  <option value="1">Transport Manager</option>
-                  <option value="2">Line Manager</option>
-                  <option value="3">HR Manager</option>
-                </SelectContainer> */}
               </div>
             </div>
             <div className="direction">

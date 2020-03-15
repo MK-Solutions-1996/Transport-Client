@@ -10,21 +10,25 @@ import ViewDrivers from "./pages/viewDrivers";
 import AddDrivers from "./pages/addDrivers";
 import Zone from "./pages/zone";
 import City from "./pages/city";
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 function App() {
   return (
-    <>
-      <Switch>
-        <Route exact path="/" component={SignInPage}></Route>
-        <Route exact path="/signup" component={SignUpPage}></Route>
-        <Route exact path="/main" component={MainPage}></Route>
-        <Route exact path="/viewDrivers" component={ViewDrivers}></Route>
-        <Route exact path="/addDrivers" component={AddDrivers}></Route>
-        <Route exact path="/zone" component={Zone}></Route>
-        <Route exact path="/city" component={City}></Route>
-        <Route component={DefaultPage}></Route>
-      </Switch>
-    </>
+    <Provider store={store}>
+      <>
+        <Switch>
+          <Route exact path="/" component={SignInPage}></Route>
+          <Route exact path="/signup" component={SignUpPage}></Route>
+          <Route exact path="/main" component={MainPage}></Route>
+          <Route exact path="/viewDrivers" component={ViewDrivers}></Route>
+          <Route exact path="/addDrivers" component={AddDrivers}></Route>
+          <Route exact path="/zone" component={Zone}></Route>
+          <Route exact path="/city" component={City}></Route>
+          <Route component={DefaultPage}></Route>
+        </Switch>
+      </>
+    </Provider>
   );
 }
 
