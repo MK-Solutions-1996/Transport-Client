@@ -47,91 +47,91 @@ function SignUp() {
 
       <div class="center">
         <div class="card">
-          <form>
-            <div className="center">
-              <TopicContainer>Sign Up</TopicContainer>
+
+          <div className="center">
+            <TopicContainer>Sign Up</TopicContainer>
+          </div>
+          <div className="direction">
+            <div className="form-group center">
+              <InputContainer
+                type="text"
+                className="form-control"
+                id="empno"
+                name="empnumber"
+                placeholder="Employee Number"
+                onChange={e => setEmpNo(e.target.value)}
+              ></InputContainer>
+              {error.empNo && <span>{error.empNo.message}</span>}
             </div>
-            <div className="direction">
-              <div className="form-group center">
-                <InputContainer
-                  type="text"
-                  className="form-control"
-                  id="empno"
-                  name="empnumber"
-                  placeholder="Employee Number"
-                  onChange={e => setEmpNo(e.target.value)}
-                ></InputContainer>
-              </div>
-              <div className="form-group center">
-                <InputContainer
-                  type="text"
-                  className="form-control"
-                  id="fname"
-                  name="firstname"
-                  placeholder="First Name"
-                  onChange={e => setFname(e.target.value)}
-                ></InputContainer>
-              </div>
+            <div className="form-group center">
+              <InputContainer
+                type="text"
+                className="form-control"
+                id="fname"
+                name="firstname"
+                placeholder="First Name"
+                onChange={e => setFname(e.target.value)}
+              ></InputContainer>
             </div>
-            <div className="direction">
-              <div className="form-group center">
-                <InputContainer
-                  type="text"
-                  className="form-control"
-                  id="email"
-                  name="emailaddress"
-                  placeholder="Email Address"
-                  onChange={e => setEmail(e.target.value)}
-                ></InputContainer>
-              </div>
-              <div className="form-group center">
-                <Dropdown
-                  value={empType}
-                  options={types}
-                  ariaLabel="Test"
-                  onChange={e => setEmpType(e.value)}
-                  placeholder="Choose Employee Type"
-                  optionLabel="label"
-                  style={{
-                    width: "20vw",
-                    height: "2rem",
-                    borderRadius: "0.4rem",
-                    margin: "0.3rem"
-                  }}
-                />
-              </div>
+          </div>
+          <div className="direction">
+            <div className="form-group center">
+              <InputContainer
+                type="text"
+                className="form-control"
+                id="email"
+                name="emailaddress"
+                placeholder="Email Address"
+                onChange={e => setEmail(e.target.value)}
+              ></InputContainer>
             </div>
-            <div className="direction">
-              <div className="form-group center">
-                <InputContainer
-                  type="password"
-                  className="form-control"
-                  id="pwd"
-                  name="password"
-                  placeholder="Password"
-                  onChange={e => setPw(e.target.value)}
-                ></InputContainer>
-              </div>
-              <div className="form-group center">
-                <InputContainer
-                  type="password"
-                  className="form-control"
-                  id="cpwd"
-                  name="confirmpassword"
-                  placeholder="Confirm Password"
-                  onChange={e => setCpw(e.target.value)}
-                ></InputContainer>
-              </div>
+            <div className="form-group center">
+              <Dropdown
+                value={empType}
+                options={types}
+                ariaLabel="Test"
+                onChange={e => setEmpType(e.value)}
+                placeholder="Choose Employee Type"
+                optionLabel="label"
+                style={{
+                  width: "20vw",
+                  height: "2rem",
+                  borderRadius: "0.4rem",
+                  margin: "0.3rem"
+                }}
+              />
             </div>
-            <div className="center">
-              {/* <ButtonContainer type="Submit">Sign Up</ButtonContainer> */}
+          </div>
+          <div className="direction">
+            <div className="form-group center">
+              <InputContainer
+                type="password"
+                className="form-control"
+                id="pwd"
+                name="password"
+                placeholder="Password"
+                onChange={e => setPw(e.target.value)}
+              ></InputContainer>
             </div>
-            <div className="center">
-              <LongLabelContainer>
-                Already have an account? <a href="/">Sign In here</a>
-              </LongLabelContainer>
+            <div className="form-group center">
+              <InputContainer
+                type="password"
+                className="form-control"
+                id="cpwd"
+                name="confirmpassword"
+                placeholder="Confirm Password"
+                onChange={e => setCpw(e.target.value)}
+              ></InputContainer>
             </div>
-          </form>
+          </div>
+          <div className="center">
+            {/* <ButtonContainer type="Submit">Sign Up</ButtonContainer> */}
+          </div>
+          <div className="center">
+            <LongLabelContainer>
+              Already have an account? <a href="/">Sign In here</a>
+            </LongLabelContainer>
+          </div>
           <button
             type="submit"
             onClick={() => dispatch(signup_user_action(payload))}
