@@ -2,7 +2,7 @@ import axios from "axios";
 
 const initial_state = {
   loading: false,
-  result: "",
+  user: {},
   error: ""
 };
 
@@ -16,10 +16,10 @@ const request = () => {
   };
 };
 
-const success = result => {
+const success = user => {
   return {
     type: SUCCESS,
-    payload: result
+    payload: user
   };
 };
 
@@ -30,7 +30,7 @@ const failure = error => {
   };
 };
 
-export const signup_reducer = (state = initial_state, action) => {
+export const signin_reducer = (state = initial_state, action) => {
   switch (action.type) {
     case REQUEST: {
       return {
@@ -41,7 +41,7 @@ export const signup_reducer = (state = initial_state, action) => {
     case SUCCESS: {
       return {
         ...state,
-        result: action.payload,
+        user: action.payload,
         loading: false
       };
     }
@@ -57,19 +57,15 @@ export const signup_reducer = (state = initial_state, action) => {
   }
 };
 
-export const signup_user_action = data => {
+export const signin_user_action = data => {
   return dispatch => {
     dispatch(request());
     axios({
-      method: "post",
-      url: "http://localhost:4000/user/signup",
+      method: "POST",
+      url: "http://localhost:4000/user/login",
       data: {
-        empNo: data.empNo,
-        firstName: data.fname,
-        type: data.empType,
-        email: data.email,
-        password: data.pw,
-        confirmPassword: data.cpw
+        username: data.empNo,
+        password: data.pw
       },
       headers: { api_key: "123" },
       timeout: 4000 // 4 seconds
@@ -77,12 +73,17 @@ export const signup_user_action = data => {
       .then(response => {
         var result = response.data;
         console.log("message", result.message);
-        dispatch(success(result));
+        console.log("User Data", result.userData);
+        dispatch(success(result.userData));
       })
       .catch(error => {
-        var result = error.response.data;
-        console.log("error", result.error);
-        dispatch(failure(result.error));
+        var result = error.response;
+        if (result.data.error) {
+          console.log("error", result.data.error);
+          dispatch(failure(result.data.error));
+        } else {
+          console.log("Server error");
+        }
       });
   };
 };
