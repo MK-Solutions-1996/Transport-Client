@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import TopNavbar from "../components/TopNavbar";
 import SideMenuBar from "../components/SideMenuBar";
+import { Dropdown } from "primereact/dropdown";
 import {
   ButtonContainer,
   InputContainer,
   TopicContainer,
-  SelectContainer,
   LabelContainer,
   DateContainer
 } from "../components/Customs";
 
 function AddDrivers() {
+  //Vehicle Types array
+  const [vehicletypes] = useState([
+    { label: "B", value: "B" },
+    { label: "D1", value: "D1" },
+    { label: "D", value: "D" }
+  ]);
+  //Vehicle Categories array
+  const [vehiclecategories] = useState([
+    { label: "Van", value: "Van" },
+    { label: "Bus", value: "Bus" }
+  ]);
+  //DropDown selections(Vehicle Types and Vehicle Categories) stores in these states
+  const [selectedVehicleType, setVehicleType] = useState("");
+  const [selectedVehicleCategory, setVehicleCategory] = useState("");
   return (
     <div className="background">
       <TopNavbar nextPage="/" pageName="Sign Out" />
       <SideMenuBar />
-
       <div className="center">
         <div className="card">
           <form action="/action_page.php">
@@ -29,10 +42,10 @@ function AddDrivers() {
                   className="form-control"
                   id="dname"
                   name="drivername"
-                  placeholder="Driver Name"
+                  placeholder="Driver "
                 ></InputContainer>
               </div>
-              <div className="form-group center">
+              <div class="form-group center">
                 <InputContainer
                   type="tel"
                   className="form-control"
@@ -110,13 +123,15 @@ function AddDrivers() {
                 ></InputContainer>
               </div>
               <div className="form-group center">
-                <SelectContainer className="browser-default custom-select">
-                  <option value="" disabled selected>
-                    Vehicle Category
-                  </option>
-                  <option value="1">Van</option>
-                  <option value="2">Bus</option>
-                </SelectContainer>
+                <Dropdown
+                  className="dropdown"
+                  value={selectedVehicleCategory}
+                  options={vehiclecategories}
+                  ariaLabel="Test"
+                  onChange={e => setVehicleCategory(e.value)}
+                  placeholder="Choose Vehicle Category"
+                  optionLabel="label"
+                />
               </div>
             </div>
             <div className="direction">
@@ -130,14 +145,15 @@ function AddDrivers() {
                 ></InputContainer>
               </div>
               <div className="form-group center">
-                <SelectContainer className="browser-default custom-select">
-                  <option value="" disabled selected>
-                    Vehicle Type
-                  </option>
-                  <option value="1">B</option>
-                  <option value="2">D1</option>
-                  <option value="3">D</option>
-                </SelectContainer>
+                <Dropdown
+                  className="dropdown"
+                  value={selectedVehicleType}
+                  options={vehicletypes}
+                  ariaLabel="Test"
+                  onChange={e => setVehicleType(e.value)}
+                  placeholder="Choose Vehicle Type"
+                  optionLabel="label"
+                />
               </div>
             </div>
             <div className="center">

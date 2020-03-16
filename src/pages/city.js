@@ -16,6 +16,7 @@ function City() {
     { label: "B1", value: "B1" },
     { label: "C", value: "C" }
   ]);
+  //DropDown selections(Main Zone and Sub Zones) stores in these states
   const [selectedSubZones, setSubZones] = useState([]);
   const [selectedMainZone, setMainZone] = useState();
   return (
@@ -50,18 +51,13 @@ function City() {
             </div>
             <div className="form-group center">
               <Dropdown
+                className="dropdown"
                 value={selectedMainZone}
                 options={zone}
                 ariaLabel="Test"
                 onChange={e => setMainZone(e.value)}
                 placeholder="Choose Main Zone"
                 optionLabel="label"
-                style={{
-                  width: "20vw",
-                  height: "2rem",
-                  borderRadius: "0.4rem",
-                  margin: "0.3rem"
-                }}
               />
             </div>
             <div className="form-group center">
