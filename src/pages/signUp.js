@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TopNavbar from "../components/TopNavbar";
 import {
   ButtonContainer,
@@ -7,8 +7,17 @@ import {
   LongLabelContainer
 } from "../components/Customs";
 import { Dropdown } from "primereact/dropdown";
+import { useSelector, useDispatch } from 'react-redux';
+import { signup_user_action } from '../redux';
 
 function SignUp() {
+
+  const signup_state = useSelector(state => state.signup);
+  const { loading, result, error } = signup_state;
+  const dispatch = useDispatch();
+
+  console.log('signup_states:', signup_state);
+
   const [types] = useState([
     {
       label: "Line Manager",
@@ -24,10 +33,18 @@ function SignUp() {
     }
   ]);
 
-  const [selectedType, setType] = useState("");
 
-  //console.log('type:', type);
-  console.log("selectedType:", selectedType);
+  const [empNo, setEmpNo] = useState('');
+  const [fname, setFname] = useState('');
+  const [email, setEmail] = useState('');
+  const [empType, setEmpType] = useState('');
+  const [pw, setPw] = useState('');
+  const [cpw, setCpw] = useState('');
+
+  const payload = { empNo, fname, email, empType, pw, cpw };
+
+
+
 
   return (
     <div className="background">
@@ -35,7 +52,7 @@ function SignUp() {
 
       <div class="center">
         <div class="card">
-          <form action="/action_page.php">
+          <form >
             <div className="center">
               <TopicContainer>Sign Up</TopicContainer>
             </div>
@@ -47,6 +64,7 @@ function SignUp() {
                   id="empno"
                   name="empnumber"
                   placeholder="Employee Number"
+                  onChange={(e) => setEmpNo(e.target.value)}
                 ></InputContainer>
               </div>
               <div className="form-group center">
@@ -56,6 +74,7 @@ function SignUp() {
                   id="fname"
                   name="firstname"
                   placeholder="First Name"
+                  onChange={(e) => setFname(e.target.value)}
                 ></InputContainer>
               </div>
             </div>
@@ -67,14 +86,15 @@ function SignUp() {
                   id="email"
                   name="emailaddress"
                   placeholder="Email Address"
+                  onChange={(e) => setEmail(e.target.value)}
                 ></InputContainer>
               </div>
               <div className="form-group center">
                 <Dropdown
-                  value={selectedType}
+                  value={empType}
                   options={types}
                   ariaLabel="Test"
-                  onChange={e => setType(e.value)}
+                  onChange={e => setEmpType(e.value)}
                   placeholder="Choose Employee Type"
                   optionLabel="label"
                   style={{
@@ -94,6 +114,7 @@ function SignUp() {
                   id="pwd"
                   name="password"
                   placeholder="Password"
+                  onChange={(e) => setPw(e.target.value)}
                 ></InputContainer>
               </div>
               <div className="form-group center">
@@ -103,11 +124,13 @@ function SignUp() {
                   id="cpwd"
                   name="confirmpassword"
                   placeholder="Confirm Password"
+                  onChange={(e) => setCpw(e.target.value)}
                 ></InputContainer>
               </div>
             </div>
             <div className="center">
-              <ButtonContainer>Sign Up</ButtonContainer>
+              {/* <ButtonContainer type="Submit">Sign Up</ButtonContainer> */}
+
             </div>
             <div className="center">
               <LongLabelContainer>
@@ -115,6 +138,7 @@ function SignUp() {
               </LongLabelContainer>
             </div>
           </form>
+          <button type="submit" onClick={() => dispatch(signup_user_action(payload))}>Signup</button>
         </div>
       </div>
     </div>

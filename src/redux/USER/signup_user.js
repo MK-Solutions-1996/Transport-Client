@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const initial_state = {
     loading: false,
     result: '',
@@ -30,6 +32,8 @@ const failure = (error) => {
     }
 }
 
+
+
 export const signup_reducer = (state = initial_state, action) => {
     switch (action.type) {
         case REQUEST: {
@@ -41,13 +45,15 @@ export const signup_reducer = (state = initial_state, action) => {
         case SUCCESS: {
             return {
                 ...state,
-                result: action.payload
+                result: action.payload,
+                loading: false
             }
         }
         case FAILURE: {
             return {
                 ...state,
-                error: action.payload
+                error: action.payload,
+                loading: false
             }
         }
         default:
@@ -55,7 +61,47 @@ export const signup_reducer = (state = initial_state, action) => {
     }
 }
 
-
 export const signup_user_action = (data) => {
-    console.log('data will be post here');
+    return (dispatch) => {
+
+        /* 
+            * Confirm password is not checked by backend, So that validations are checked here
+        */
+        if (data.cpw === "") {
+            const cpwError = { cpw: { message: "Required" } };
+            dispatch(failure(cpwError));
+        }
+
+        else if (data.pw !== data.cpw) {
+            const cpwError = { cpw: { message: "Password not match" } };
+            dispatch(failure(cpwError));
+        }
+        else {
+            dispatch(request())
+            axios({
+                method: 'post',
+                url: 'http://localhost:4000/user/signup',
+                data: {
+                    empNo: data.empNo,
+                    firstName: data.fname,
+                    type: data.empType,
+                    email: data.email,
+                    password: data.pw
+                },
+                headers: { 'api_key': '123' },
+                timeout: 4000 // 4 seconds 
+
+            })
+                .then(response => {
+                    var result = response.data;
+                    console.log('message', result.message);
+                    dispatch(success(result));
+                })
+                .catch(error => {
+                    var result = error.response.data;
+                    console.log('error', result.error);
+                    dispatch(failure(result.error));
+                })
+        }
+    }
 }

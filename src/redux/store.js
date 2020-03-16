@@ -4,7 +4,7 @@ import rootReducer from './root_reducer';
 import thunk from 'redux-thunk';
 
 // logger wiil console log the everything about the redux state transition
-const store = createStore(rootReducer, applyMiddleware(logger, thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 
 
